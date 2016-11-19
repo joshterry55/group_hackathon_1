@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>Your Posts</h1>
+<hr />
+
+<div>
+  <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <div class=''
+        <h6><%= post.title %></h6>
+        <div>
+          <%= link_to 'Show', post_path(post), class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>You have no posts, please create one.</h3>
+  <% end %>
+</div>
+<div class='clearfix'></div>
+<hr />
+  <div class='well'>
+    <%= will_paginate @posts %>
+  </div>
+<hr />
+<%= link_to 'New Post', new_post_path, class: 'btn' %>

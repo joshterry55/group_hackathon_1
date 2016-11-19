@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post
-  before_action :set_feed, except: [:index, :new, :create]
-
-  def index
-    @posts = feed.posts.all
-  end
+  before_action :set_feed, except: [:new, :create]
 
   def show
+    paginate(page: params[:page], per_page: 15)
   end
 
   def new

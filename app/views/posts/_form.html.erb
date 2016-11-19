@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :category %>
+  <%= f.select :category, ['HTML/CSS', 'Ruby on Rails'] %>
+  <br />
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <br />
+  <%= f.submit, nil: true, class: 'btn' %>
+<% end %>

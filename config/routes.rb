@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get '/show', to: 'feeds#show', as: 'show'
 
   resources :feeds do
-    resources :posts
+    resources :posts, except: [:index]
   end
   resources :profiles do
-    resources :posts
+    resources :posts, except: [:index]
   end
 end
