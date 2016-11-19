@@ -1,2 +1,39 @@
-<h1>Feed#show</h1>
-<p>Find me in app/views/feed/show.html.erb</p>
+<h1 class='center'>Coments for: <%= current_user.feed.category %></h1>
+<hr />
+
+<%case @feed %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'Ruby on Rails') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'HTML/CSS') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'JavaScript') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'PHP') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'Python') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'Java') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'Cake') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% when @feed.category = Post.category.where("lower(category)Like?",'ReactJS') %>
+    <% @posts.each do |p| %>
+      <%= post %>
+    <% end %>
+  <% else %>
+    <h1>Something is Worng</h1>
+<% end %>
