@@ -1,2 +1,23 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<h1>Find Other Developers</h1>
+<hr>
+<% if @profiles.any? %>
+<ul class="collection container border">
+  <% @profiles.each do |profile| %>
+  <li class="collection-item avatar">
+    <div class='row'>
+      <% if profile.avatar? %>
+        <div class='col s12 m3'>
+          <%= cl_image_tag(profile.avatar.path, {size: '100x100', crop: :thumb}) %>
+        </div>
+      <% end %>
+      <div class='col s12 m8'>
+        <span class="title"><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></span>
+        <p><%= profile.language %> <br>
+           <%= truncate(profile.bio, length: 30) %>
+        </p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>
