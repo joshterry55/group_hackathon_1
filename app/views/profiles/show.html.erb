@@ -6,9 +6,14 @@
 <% end %>
 
 <%= link_to "Edit", edit_profile_path(@profile), class: "btn" %>
-<%= link_to "New Post", new_profile_post_path(@profile), class: 'btn' %>
+
 
 <hr>
+<div class='center'>
+  <%= link_to "New Post", new_profile_post_path(@profile), class: 'btn' %>
+  <h2>Recent Posts</h2>
+</div>
+<br>
 <% if @posts.try(:any?) %>
   <div class="row">
     <% @posts.order('created_at DESC').each do |post| %>

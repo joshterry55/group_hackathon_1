@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, except: [:new, :create]
   before_action :set_profile
+  before_action :set_post, except: [:new, :create]
 
   def show
     paginate(page: params[:page], per_page: 15)
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to profiles_path
+    redirect_to profile_path(@profile)
   end
 
   private
