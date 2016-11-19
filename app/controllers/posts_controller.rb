@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.save(post_params)
-      redirect_to profile_post(@post), success: 'Your post was edited!'
+    if @post.update(post_params)
+      redirect_to profile_path(@profile), success: 'Your post was edited!'
     else
       render :edit, error: 'Something went wrong, try again!'
     end
