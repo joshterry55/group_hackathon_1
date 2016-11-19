@@ -25,7 +25,11 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
+  <div class='col m6'>
+    <%= f.label :avatar %>
+    <%= f.attachinary_file_field :avatar %>
+  </div>
   <div class='center'>
-    <%= f.submit class: 'btn form-button' %>
+    <%= f.submit nil, class: 'btn form-button' %>
   </div>
 <% end %>
