@@ -1,12 +1,14 @@
-<%= form_for @post do |f| %>
+<%= form_for [@profile, @post] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br />
   <%= f.label :category %>
-  <%= f.select :category, ['HTML/CSS', 'Ruby on Rails'] %>
+  <br />
+  <br />
+  <%= f.select :category, ['Ruby on Rails', 'HTML/CSS', 'JavaScript', 'PHP', 'Python', 'Java', 'Cake', 'ReactJS'] %>
   <br />
   <%= f.label :body %>
   <%= f.text_field :body %>
   <br />
-  <%= f.submit, nil: true, class: 'btn' %>
+  <%= f.submit nil, class: 'btn' %>
 <% end %>

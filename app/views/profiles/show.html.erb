@@ -6,3 +6,28 @@
 <% end %>
 
 <%= link_to "Edit", edit_profile_path(@profile), class: "btn" %>
+<%= link_to "New Post", new_profile_post_path(@profile), class: 'btn' %>
+
+<hr>
+<% if @posts.try(:any?) %>
+  <div class="row">
+    <% @posts.each do |post| %>
+       <div class="col s12 m6">
+         <div class="card blue-grey darken-1">
+           <div class="card-content white-text">
+             <span class="card-title"><%= post.title %></span>
+             <small><%= post.category %></small>
+             <p><%= post.body %></p>
+           </div>
+           <% if current_user.id == post.user_id %>
+             <div class="card-action">
+               <%= link_to "Edit", edit_profile_post_path(@profile, post) %>
+               <%= link_to "Delete", profile_post_path(@profile, post), method: :delete, data: {confirm: 'Really Delete?'}%>
+             </div>
+           <% end %>
+         </div>
+       </div>
+    <% end %>
+   </div>
+ <% end %>
+<hr>

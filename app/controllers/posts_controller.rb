@@ -1,19 +1,19 @@
 class PostsController < ApplicationController
-  before_action :set_post
-  before_action :set_feed, except: [:new, :create]
+  before_action :set_post, except: [:new, :create]
+  before_action :set_profile
 
   def show
     paginate(page: params[:page], per_page: 15)
   end
 
   def new
-    @post = feed.posts.new
+    @post = @profile.posts.new
   end
 
   def create
-    @post = feed.posts.new(post_params)
+    @post = @profile.posts.new(post_params)
     if @post.save
-      redirect_to feeds_path(@post), success: 'Your post was added!'
+      redirect_to profiles_path(@post), success: 'Your post was added!'
     else
       render :new, error: 'Something went wrong, try again!'
     end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.save(post_params)
-      redirect_to feed_post(@post), success: 'Your post was edited!'
+      redirect_to profile_post(@post), success: 'Your post was edited!'
     else
       render :edit, error: 'Something went wrong, try again!'
     end
@@ -32,20 +32,20 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to feeds_path
+    redirect_to profiles_path
   end
 
   private
     def set_post
-      @post = feed.posts.find(params[:id])
+      @post = @profile.posts.find(params[:id])
     end
 
-    def set_feed
-      @feed = Feed.find(params[:feed_id])
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
     end
 
     def post_params
-      params.require(:post).permit(:title, :category, :body)
+      params.require(:post).permit(:title, :category, :body, :feed_id, :profile_id)
     end
 
 end
