@@ -23,6 +23,7 @@ gem 'cloudinary'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'paginate'
+gem 'material_icons'
 
 
 group :development, :test do
