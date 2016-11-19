@@ -1,35 +1,28 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-# Use Puma as the app server
 gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
-gem 'materialize-sass'
-gem 'devise'
-gem 'attachinary'
-gem 'cloudinary'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'paginate'
+gem 'materialize-sass', '~> 0.97.8'
+gem 'devise', '4.2.0'
+gem 'attachinary', '~> 1.3.1'
+gem 'cloudinary', '~> 1.1.7'
+gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-github', '~> 1.1.2'
+gem 'paginate', '~> 4.0.1'
 
 
 group :development, :test do
-  gem 'pry'
-  gem 'faker'
-  gem 'populator'
-  gem 'dotenv-rails'
+  gem 'pry', '~> 0.10.4'
+  gem 'faker', '~> 1.6.6'
+  gem 'populator', '~> 1.0.0'
+  gem 'dotenv-rails', '~> 2.1.1'
 end
 
 group :development do

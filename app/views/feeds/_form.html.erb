@@ -1,0 +1,5 @@
+<%= form_for @feeds do |f| %>
+  <%= f.label :category %>
+  <%= f.select :category, ['Ruby on Rails', 'HTML/CSS', 'JavaScript', 'PHP', 'Python', 'Java', 'Cake', 'ReactJS'] %>
+  <%= f.submit %>
+<% end %>
