@@ -9,11 +9,12 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = current_user.profiles.new
+    @profile = Profile.new
   end
 
   def create
-    @profile = current_user.profiles.new(profile_params)
+    @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
     if @profile.save
       flash[:success] = 'Profile Created Successfully!'
       redirect_to profile_path(@profile)
