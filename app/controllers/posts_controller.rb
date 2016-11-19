@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, except: [:new, :create]
   before_action :set_profile
+  before_action :set_post, except: [:new, :create]
 
   def show
     paginate(page: params[:page], per_page: 15)
@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.save(post_params)
-      redirect_to profile_post(@post), success: 'Your post was edited!'
+    if @post.update(post_params)
+      redirect_to profile_path(@profile), success: 'Your post was edited!'
     else
       render :edit, error: 'Something went wrong, try again!'
     end
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to profiles_path
+    redirect_to profile_path(@profile)
   end
 
   private
