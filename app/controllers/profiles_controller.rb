@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, except: [:index, :new, :create]
 
   def index
-    @profiles = Profiles.all
+    @profiles = Profile.all
   end
 
   def show

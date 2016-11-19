@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = @profile.posts.new(post_params)
     if @post.save
-      redirect_to profiles_path(@post), success: 'Your post was added!'
+      redirect_to profile_path(@post), success: 'Your post was added!'
     else
       render :new, error: 'Something went wrong, try again!'
     end
