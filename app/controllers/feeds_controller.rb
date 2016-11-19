@@ -2,16 +2,29 @@ class FeedsController < ApplicationController
   before_action :set_feed, only: [:show]
 
   def index
-    @feeds = Feed.new
+    @feeds = Feed.all
+    @feed = Feed.new
+  end
+
+  def new
+    @feed = Feed.new
+  end
+
+  def create
+    @feed = Feed.new(feed_params)
+    if @feed.save
+      redirect_to feed_path(@feed), success: 'You are now in!'
+    else
+      render :new, error: 'Something went wrong!'
+    end
   end
 
   def show
-    @feed = Feed.category(feed_params)
   end
 
   private
     def feed_params
-      params.require(:feed).permit(:category)
+      params.require(:feed).permit(:category, :user_id)
     end
 
     def set_feed
