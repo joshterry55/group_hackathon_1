@@ -19,7 +19,9 @@
  </div>
   <div class='col m6'>
     <%= f.label :experience %>
-    <%= f.text_field :experience %>
+      <br />
+      <br />
+    <%= f.select :experience, ['> 1 year', '1-2 years', '3 years', '4 years', '5+ years'] %>
   </div>
   <div class='col m6'>
     <%= f.label :bio %>

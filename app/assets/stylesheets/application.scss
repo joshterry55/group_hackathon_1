@@ -15,3 +15,22 @@ main {
 #lable {
   padding-left: 15px;
 }
+
+
+.leftfloat1 {
+  float: left;
+  width: 40%;
+}
+
+.leftfloat2 {
+  float: left;
+  width: 60%;
+}
+
+.clearfloat {
+  clear: both
+}
+
+body {
+  font-family: courier;
+}
