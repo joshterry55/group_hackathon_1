@@ -19,7 +19,7 @@
              <small><%= post.category %></small>
              <p><%= post.body %></p>
            </div>
-           <% if current_user.id == post.user_id %>
+           <% if current_user.id == @profile.user_id %>
              <div class="card-action">
                <%= link_to "Edit", edit_profile_post_path(@profile, post) %>
                <%= link_to "Delete", profile_post_path(@profile, post), method: :delete, data: {confirm: 'Really Delete?'}%>
