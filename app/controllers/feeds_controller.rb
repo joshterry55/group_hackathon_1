@@ -21,6 +21,7 @@ class FeedsController < ApplicationController
   end
 
   def show
+    @posts = @feed.posts
   end
 
   private
