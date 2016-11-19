@@ -1,0 +1,37 @@
+<%= form_for @profile do |f| %>
+  <div class='col m6'>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true %>
+  </div>
+  <div class='col m6'>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_namename, required: true %>
+  </div>
+  <div class='col m6'>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class='col m6'>
+    <%= f.label :language %>
+    <%= f.text_field :language %>
+  </div>
+  <div class='col m6'>
+    <%= f.label :experience %>
+    <%= f.text_field :experience %>
+  </div>
+  <div class='col m6'>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+   <div class='input-field col m6'>
+    <%= f.label :color %>
+      <br />
+      <br />
+    <%= f.select :color, ['blue', 'red', 'green', 'orange', 'purple', 'pink'] %>
+  </div>
+    <br />
+
+  <div class='center'>
+    <%= f.submit class: 'btn form-button' %>
+  </div>
+<% end %>

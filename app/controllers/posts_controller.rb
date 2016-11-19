@@ -30,6 +30,7 @@ class PostsController < ApplicationController
       redirect_to feed_post(@post), success: 'Your post was edited!'
     else
       render :edit, error: 'Something went wrong, try again!'
+    end
   end
 
   def destroy
