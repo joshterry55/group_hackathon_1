@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post
-  before_action :set_feed, :except [:index, :new, :edit]
+  before_action :set_feed, except: [:index, :new, :create]
 
   def index
     @posts = feed.posts.all
