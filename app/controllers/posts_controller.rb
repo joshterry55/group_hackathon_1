@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = @profile.posts.new(post_params)
+    @post.feed_id = Feed.find_by(category: @post.category).try(:id)
     if @post.save
       redirect_to profile_path(@profile), success: 'Your post was added!'
     else

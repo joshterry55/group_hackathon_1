@@ -3,7 +3,13 @@
   <h1 class='center'>Hackers-R-Us</h1>
   <p class='center teal-text'><strong>Welcome to the best place to meet people like you. We love to hack and connect. Feel free to explore this place and connect to the web of internet peoples.</strong></p>
   <% @feeds.all %>
-    <%= render(partial: 'form') %>
+  <ul>
+    <% @feeds.each do |feed| %>
+      <li>
+        <%= link_to feed.category, feed_path(feed) %>
+      </li>
+    <% end %>
+ </ul>
 <% else %>
   <div class='center'>
     <h1>You have not made a profile yet!</h1>
