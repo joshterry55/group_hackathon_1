@@ -4,6 +4,7 @@ class FeedsController < ApplicationController
   def index
     @feeds = Feed.all
     @feed = Feed.new
+    @profile = Profile.all
   end
 
   def new

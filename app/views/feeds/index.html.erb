@@ -1,6 +1,12 @@
 <h1 class='center'>Welcome</h1>
-<h1 class='center'>Hacks-R-Us</h1>
-<p class='center green-text'>Welcome to the best place to meet people like you. We love to hack and connect. Feel free to explore this place and connect to the web of internet peoples.</p>
-<% @feeds.all %>
-  <%= render(partial: 'form') %>
-<hr />
+<% if @profile.any? %>
+  <h1 class='center'>Hackers-R-Us</h1>
+  <p class='center teal-text'><strong>Welcome to the best place to meet people like you. We love to hack and connect. Feel free to explore this place and connect to the web of internet peoples.</strong></p>
+  <% @feeds.all %>
+    <%= render(partial: 'form') %>
+<% else %>
+  <div class='center'>
+    <h1>You have not made a profile yet!</h1>
+    <h3><%= link_to 'Make Your Profile', new_profile_path, class:'teal-text'%></h3>
+  </div>
+<% end %>
