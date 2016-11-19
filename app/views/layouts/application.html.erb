@@ -6,9 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
+    <%= render(partial: 'layouts/navbar') %>
     <% flash.each do |key, value| %>
       <div class="flash <%= key %>">
         <%= value %>

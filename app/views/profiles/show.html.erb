@@ -1,2 +1,8 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1><%= @profile.full_name %></h1>
+<hr>
+
+<% if @profile.avatar? %>
+  <%= cl_image_tag(@profile.avatar.path, { size: '125x125', crop: :fit }) %>
+<% end %>
+
+<%= link_to "Edit", edit_profile_path(@profile), class: "btn" %>

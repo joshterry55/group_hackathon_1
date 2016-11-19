@@ -104,6 +104,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    material_icons (2.2.0)
+      railties (>= 3.2)
     materialize-sass (0.97.8)
       sass (~> 3.3)
     method_source (0.8.2)
@@ -237,10 +239,18 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
+<<<<<<< HEAD
   materialize-sass (~> 0.97.8)
   omniauth-facebook (~> 4.0.0)
   omniauth-github (~> 1.1.2)
   paginate (~> 4.0.1)
+=======
+  material_icons
+  materialize-sass
+  omniauth-facebook
+  omniauth-github
+  paginate
+>>>>>>> 0e48d812daf7214f4187b3587a4bb31a5377d10d
   pg (~> 0.18)
   populator (~> 1.0.0)
   pry (~> 0.10.4)
