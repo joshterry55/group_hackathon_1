@@ -32,20 +32,24 @@ ActiveRecord::Schema.define(version: 20161119192242) do
 
   create_table "feeds", force: :cascade do |t|
     t.string   "category"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feeds_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "category"
     t.string   "body"
+    t.integer  "user_id"
     t.integer  "feed_id"
     t.integer  "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feed_id"], name: "index_posts_on_feed_id", using: :btree
     t.index ["profile_id"], name: "index_posts_on_profile_id", using: :btree
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
