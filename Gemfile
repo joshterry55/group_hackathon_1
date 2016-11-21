@@ -9,14 +9,19 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
-gem 'materialize-sass'
-gem 'devise'
-gem 'attachinary'
-gem 'cloudinary'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'paginate'
-gem 'material_icons'
+gem 'materialize-sass', '~> 0.97.8'
+gem 'devise', '~> 4.2.0'
+gem 'attachinary', '~> 1.3.1'
+gem 'cloudinary', '~> 1.1.7'
+gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-github', '~> 1.1.2'
+gem 'paginate', '~> 4.0.1'
+gem 'material_icons', '~> 2.2.0'
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'rspec-rails', '~> 3.5.2'
+end
 
 
 group :development, :test do
@@ -27,10 +32,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'letter_opener'
-  gem 'web-console'
+  gem 'letter_opener', '~> 1.4.1'
+  gem 'web-console', '~> 3.4.0'
   gem 'listen', '~> 3.0.5'
-  gem 'spring'
+  gem 'spring', '~> 2.0.0'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
